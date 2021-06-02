@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,20 +13,22 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace GeoPoligons
 {
     public partial class Form1 : Form
     {
+        
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
             gMap.DragButton = MouseButtons.Left;
             gMap.MapProvider = GMapProviders.YandexMap;
 
@@ -51,28 +54,17 @@ namespace GeoPoligons
             points.Add(new PointLatLng(54.504639, 36.169835));
             GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
             polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
-            polygon.Stroke = new Pen(Color.Red, 1);  
+            polygon.Stroke = new Pen(Color.Red, 1);
+            polyOverlay.Polygons.Clear();
+            gMap.Overlays.Clear();
             polyOverlay.Polygons.Add(polygon);
             gMap.Overlays.Add(polyOverlay);
-
-
-
+            markers.Markers.Clear();
             markers.Markers.Add(marker);
             gMap.Overlays.Add(markers);
             gMap.Zoom += 1;
             gMap.Zoom -= 1;
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
             
-        }
-
-        private void Clear(GMapOverlay polyOverlay)
-        {
-
-            gMap.Overlays.Remove(polyOverlay);
-        }
+        } 
     }
 }
