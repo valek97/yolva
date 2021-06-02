@@ -43,17 +43,30 @@ namespace GeoPoligons
             client.Headers["User-Agent"] = "Mozilla/5.0";
             // string json;
             string json = Encoding.UTF8.GetString(client.DownloadData(StartUrl+textBox3.Text+"&format=json&polygon_geojson=1"));
-            List<Models.Class1> geo = JsonConvert.DeserializeObject<List<Models.Class1>>(json);
-            List<PointLatLng> points = new List<PointLatLng>();
-            points.Add(new PointLatLng(54.532747, 36.318718));
-            points.Add(new PointLatLng(54.492495, 36.326470));
-            points.Add(new PointLatLng(54.476423, 36.242333));
-            points.Add(new PointLatLng(54.504639, 36.169835));
+            var geo = JsonConvert.DeserializeObject<List<Models.Class1>>(json);
+            var myObj = geo[0];
+            var myarr = myObj.geojson.coordinates[0];
+            IEnumerable enumerable = myarr as IEnumerable;
+            
+                List<PointLatLng> points = new List<PointLatLng>();
+            foreach (object item in enumerable)
+            {
+                string mystr = item.ToString();
+                string myString = mystr.Replace("\r\n", string.Empty);
+                var mystring2 = myString.Replace("[", string.Empty);
+                var mystring3 = mystring2.Replace("]", string.Empty);
+                var mystring4 = mystring3.Replace(",", string.Empty);
+                var mystring5 = mystring4.Substring(2);
+                string[] words = mystring5.Split(new char[] { ' ' });
+                string lating = words[0];
+                string lang = words[2];
+                points.Add(new PointLatLng((double.Parse(words[2], System.Globalization.CultureInfo.InvariantCulture)), ((double.Parse(words[0], System.Globalization.CultureInfo.InvariantCulture)))));
+            }
             foreach (var item in geo)
             {
                 foreach (var item2 in item.geojson.coordinates)
                 {
-                    foreach (var myarr in item2.)
+                    //foreach (var myarr in item2.)
                     {
 
                     }

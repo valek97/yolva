@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace GeoPoligons.Models
 {
 
+
     public class Rootobject
     {
         public Class1[] Property1 { get; set; }
@@ -17,7 +18,7 @@ namespace GeoPoligons.Models
         public int place_id { get; set; }
         public string licence { get; set; }
         public string osm_type { get; set; }
-        public Int64 osm_id { get; set; }
+        public long osm_id { get; set; }
         public string[] boundingbox { get; set; }
         public string lat { get; set; }
         public string lon { get; set; }
@@ -34,5 +35,6 @@ namespace GeoPoligons.Models
         public string type { get; set; }
         public object[] coordinates { get; set; }
     }
+
 
 }
