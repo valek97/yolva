@@ -22,3 +22,13 @@ E:\yolva\GeoPoligons\obj\Debug\GeoPoligons.csproj.CoreCompileInputs.cache
 E:\yolva\GeoPoligons\obj\Debug\GeoPoligons.csproj.CopyComplete
 E:\yolva\GeoPoligons\obj\Debug\GeoPoligons.exe
 E:\yolva\GeoPoligons\obj\Debug\GeoPoligons.pdb
+E:\yolva\GeoPoligons\bin\Debug\ServiceStack.Text.dll
+E:\yolva\GeoPoligons\bin\Debug\System.Buffers.dll
+E:\yolva\GeoPoligons\bin\Debug\System.Memory.dll
+E:\yolva\GeoPoligons\bin\Debug\System.Numerics.Vectors.dll
+E:\yolva\GeoPoligons\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\yolva\GeoPoligons\bin\Debug\ServiceStack.Text.xml
+E:\yolva\GeoPoligons\bin\Debug\System.Buffers.xml
+E:\yolva\GeoPoligons\bin\Debug\System.Memory.xml
+E:\yolva\GeoPoligons\bin\Debug\System.Numerics.Vectors.xml
+E:\yolva\GeoPoligons\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
